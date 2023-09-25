@@ -8,4 +8,4 @@ if lastDig > 5:
 elif lastDig < 6 and lastDig != 0:
     print(f"Last digit of {number} is {lastDig} and is less than 6 and not 0")
 else:
-    print(f"Last digit of {number} is {lastDig} and is 0\n")
+    print(f"Last digit of {number} is {lastDig} and is 0")
