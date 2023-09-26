@@ -8,7 +8,7 @@ lessThanSix = "and is less than 6 and not 0"
 isZero = "and is 0"
 lastDig = abs(number) % 10
 if lastDig < 0:
-    lastDig = lastDig + -m
+    lastDig = lastDig + -1
 if lastDig > 5:
     print(f"{str} {number} {str1} {lastDig} {greaterThanFive}")
 elif lastDig < 6 and lastDig != 0:
