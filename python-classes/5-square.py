@@ -43,6 +43,7 @@ class Square:
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         return self.__size ** 2
+
     def my_print(self):
         """
         python3 -c 'print(__import__("my_module").my_function.__doc__)'
