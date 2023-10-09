@@ -32,7 +32,7 @@ class Square:
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         if not isinstance(value, int):
-            raise TypeError("size must be integer")
+            raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
