@@ -7,9 +7,9 @@ python3 -c 'print(__import__("my_module").my_function.__doc__)'
 
 
 class Square:
+    """
+    This is the documentation for the Square class.
+    The class represents a geometric square and associated operations.
+    """
     def __init__(self, size):
-        """
-        This is the documentation for the Square class.
-        The class represents a geometric square and associated operations.
-        """
         self.__size = size
