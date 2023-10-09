@@ -19,10 +19,18 @@ class Square:
 
     @property
     def size(self):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
         if not isinstance(value, int):
             raise TypeError("size must be integer")
         elif value < 0:
@@ -30,4 +38,8 @@ class Square:
         self.__size = value
 
     def area(self):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
         return self.__size ** 2
