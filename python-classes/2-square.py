@@ -16,7 +16,7 @@ class Square:
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         if not isinstance(size, int):
-            raise TypeError("size must be an integer") 
+            raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
