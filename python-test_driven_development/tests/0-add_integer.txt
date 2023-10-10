@@ -1,0 +1,9 @@
+The ''add_integer'' module
+===========================
+
+Using ''add_integer''
+=====================
+
+>>> from ../add_integer import add_integer
+>>> add_integer(2, 3)
+5
