@@ -70,12 +70,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return ((self.__height * 2) + (self.__width * 2))
-    
+
     def __str__(self):
         '''
         Pringing the rectangle
         '''
-        if self.__width== 0 or self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return (f"")
 
         print_rec = []
