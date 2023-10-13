@@ -85,4 +85,4 @@ class Rectangle:
             if i < self.__height - 1:
                 print_rec.append("\n")
 
-        return ("").join(print_rec)
+        return "".join(print_rec)
