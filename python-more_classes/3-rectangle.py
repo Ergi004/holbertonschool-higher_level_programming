@@ -76,7 +76,7 @@ class Rectangle:
         Pringing the rectangle
         '''
         if self.__width== 0 or self.__height == 0:
-            return ("")
+            return (f"")
 
         print_rec = []
         for i in range(self.__height):
