@@ -5,10 +5,7 @@ python3 -c 'print(__import__("my_module").__doc__)'
 
 
 class MyList(list):
-    """
-    python3 -c 'print(__import__("my_module").MyClass.__doc__)'
-    """
-
+    '''Prints a sorted list'''
     def print_sorted(self):
         ls = self.copy()
         ls.sort()
