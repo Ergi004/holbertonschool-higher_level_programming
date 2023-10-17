@@ -1,0 +1,15 @@
+This is a custom list class.
+
+It provides a `print_sorted` method to print the list elements in sorted order.
+
+Example:
+>>> my_list = MyList([3, 1, 2])
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+Sorts and prints the list elements.
+
+Example:
+>>> my_list = MyList([3, 1, 2])
+>>> my_list.print_sorted()
+[1, 2, 3]
