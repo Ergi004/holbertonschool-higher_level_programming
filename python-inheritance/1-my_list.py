@@ -7,13 +7,13 @@ class MyList(list):
     """
     python3 -c 'print(__import__("my_module").MyClass.__doc__)'
     """
-    
-    def __init__(self):
-        return super().__init__()
 
     def print_sorted(self):
         """
         python3 -c 'print(__import__("my_module").my_function.__doc__)'
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
-        return super().sort()     
+        ls = self.copy()
+        ls.sort()
+        print(ls)
+        return ls
