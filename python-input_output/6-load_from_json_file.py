@@ -12,4 +12,4 @@ def load_from_json_file(filename):
     python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
     """
     with open(filename) as f:
-        return json.load(file)
+        return json.load(f)
