@@ -10,5 +10,5 @@ def write_file(filename="", text=""):
     python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
     """
 
-    with open(filename, 'w', encoding='utf-8') as f: 
+    with open(filename, 'w', encoding='utf-8') as f:
         return f.write(text)
