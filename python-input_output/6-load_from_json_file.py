@@ -11,5 +11,5 @@ def load_from_json_file(filename):
     python3 -c 'print(__import__("my_module").my_function.__doc__)'
     python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
     """
-    with open(filename, 'a') as f:
+    with open(filename) as f:
         return json.load(file)
