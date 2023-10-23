@@ -14,4 +14,3 @@ class Base:
         self.__id = id
         if id is not None:
             self.id = id
-        self.id = nb_objects
