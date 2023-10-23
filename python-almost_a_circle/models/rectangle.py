@@ -12,10 +12,10 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -64,3 +64,29 @@ class Rectangle(Base):
             raise TypeError("Y must be an integer")
         if value <= 0:
             raise ValueError("Y mist be > 0")
+
+    def display(self):
+        for i in range(self.y):
+            print()
+        for i in range(self.height):
+            for j in range(self.x):
+                print(" ", end="")
+            for j in range(self.width):
+                print(" ", end="")
+            print()
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} {self.width}/{self.height}"
+
+    def update(self, *args):
+        for index, value in enumerate(args):
+            if index == 0:
+                self.id = args[index]
+            if index == 1:
+                self.width = args[index]
+            if index == 2:
+                self.height = args[index]
+            if index == 3:
+                self.x = args[index]
+            if index == 4:
+                self.y = args[index]
