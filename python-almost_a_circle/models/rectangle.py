@@ -78,14 +78,10 @@ class Rectangle(Base):
         """
         Display of the rectangle
         """
-        for i in range(self.y):
-            print()
-        for i in range(self.height):
-            for j in range(self.x):
-                print(" ", end="")
-            for j in range(self.width):
-                print(" ", end="")
-            print()
+        print("\n" * self.y, end="")
+        for h in range(self.height):
+            print(" ", end="")
+            print("#", end="")
 
     def update(self, *args):
         """
