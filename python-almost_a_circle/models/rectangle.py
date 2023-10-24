@@ -11,6 +11,9 @@ class Rectangle(Base):
     Class Rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initalization the attributes
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -23,11 +26,11 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.__width = value
-        if value is not (int):
+        if type(value) != (int):
             raise TypeError("Width must be an integer")
         if value <= 0:
-            raise ValueError("Hidht must be > 0")
+            raise ValueError("width must be > 0")
+        self.__width = value
 
     @property
     def height(self):
@@ -35,11 +38,11 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        self.__height = value
-        if value is not (int):
+        if type(value) != (int):
             raise TypeError("Height must be an integer")
         if value <= 0:
-            raise ValueError("Height mist be > 0")
+            raise ValueError("Height must be > 0")
+        self.__height = value
 
     @property
     def x(self):
@@ -47,11 +50,11 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.__x = value
-        if value is not (int):
+        if type(value) != (int):
             raise TypeError("X must be an integer")
-        if value <= 0:
-            raise ValueError("X mist be > 0")
+        if value < 0:
+            raise ValueError("X must be >= 0")
+        self.__x = value
 
     @property
     def y(self):
@@ -59,13 +62,22 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.__y = value
-        if value is not (int):
+        if type(value) != (int):
             raise TypeError("Y must be an integer")
-        if value <= 0:
-            raise ValueError("Y mist be > 0")
+        if value < 0:
+            raise ValueError("Y must be >= 0")
+        self.__y = value
+
+    def area(self):
+        """
+        Rectangle area
+        """
+        return self.width * self.height
 
     def display(self):
+        """
+        Display of the rectangle
+        """
         for i in range(self.y):
             print()
         for i in range(self.height):
@@ -75,18 +87,45 @@ class Rectangle(Base):
                 print(" ", end="")
             print()
 
-    def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} {self.width}/{self.height}"
-
     def update(self, *args):
-        for index, value in enumerate(args):
-            if index == 0:
-                self.id = args[index]
-            if index == 1:
-                self.width = args[index]
-            if index == 2:
-                self.height = args[index]
-            if index == 3:
-                self.x = args[index]
-            if index == 4:
-                self.y = args[index]
+        """
+        Update
+        """
+        if args:
+            a_index = 0
+            for arg in args:
+                if a_index == 0:
+                    self.id = arg
+                elif a_index == 1:
+                    self.width = arg
+                elif a_index == 2:
+                    self.height = arg
+                elif a_index == 3:
+                    self.x = arg
+                elif a_index == 4:
+                    self.y = arg
+                a_index += 1
+
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def to_dict(self):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
+        return {
+
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+                }
+
+    def __str__(self):
+        """
+        String imlementation
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
