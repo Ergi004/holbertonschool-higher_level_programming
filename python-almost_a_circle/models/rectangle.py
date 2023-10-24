@@ -70,13 +70,15 @@ class Rectangle(Base):
 
     def area(self):
         """
-        Rectangle area
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         return self.width * self.height
 
     def display(self):
         """
-        Display of the rectangle
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         print("\n" * self.y, end="")
         for h in range(self.height):
@@ -85,7 +87,8 @@ class Rectangle(Base):
 
     def update(self, *args):
         """
-        Update
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         if args:
             a_index = 0
@@ -121,7 +124,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        String imlementation
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
