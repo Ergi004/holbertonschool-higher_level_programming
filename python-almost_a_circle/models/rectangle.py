@@ -93,9 +93,11 @@ class Rectangle(Base):
         '''
         Function to update instance variables
         '''
+        attribute_names = ["id", "width", "height", "x", "y"]
+        for i, value in enumerate(args):
+            if i < len(attribute_names):
+                setattr(self, attribute_names[i], value)
         if kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-        if args:
-            self.id, self.width, self.height, self.x, self.y = args[:5]
