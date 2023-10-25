@@ -79,7 +79,7 @@ class Rectangle(Base):
         Display of the rectangle
         """
         if self.y != 0:
-            print("\n" * (self.x - 1))
+            print("\n" * (self.y - 1))
         for _ in range(self.height):
             if self.x != 0:
                 print(' ' * self.x, end="")
@@ -87,7 +87,4 @@ class Rectangle(Base):
 
     def __str__(self):
         return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y}\
- - {self.width}/{self.height}"
-
-
-    
+ - {self.width}/{self.height}" 
