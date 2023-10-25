@@ -84,3 +84,10 @@ class Rectangle(Base):
             if self.x != 0:
                 print(' ' * self.x, end="")
             print("#" * self.width)
+
+    def __str__(self):
+        """
+        String
+        """
+        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y}
+        {self.width}/{self.height}"
