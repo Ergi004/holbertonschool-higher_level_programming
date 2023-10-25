@@ -8,7 +8,7 @@ class Square(Rectangle):
     Square class
     """
 
-    def __init__(self, size, x=0, y=0):
+    def __init__(self, size, x=0, y=0, id=None):
         """
         initialization attributes
         """
@@ -22,3 +22,11 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
+    def __str__(self):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
