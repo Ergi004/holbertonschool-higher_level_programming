@@ -47,8 +47,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         '''
-        Function to return dictionary
-        representation of a Rectangle
+        Function that returns representation
+        of an object as a dictionary
         '''
-        return {"id": self.id, "width": self.width, "height": self.height,
-                "x": self.x, "y": self.y}
+
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
