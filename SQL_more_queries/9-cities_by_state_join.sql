@@ -1,14 +1,5 @@
 -- 3 first students in the Batch ID=3
 -- because Batch 3 is the best!
-CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-CREATE TABLE IF NOT EXISTS cities (
-        id INT UNIQUE AUTO_INCREMENT NOT NULL PRIMARY KEY,
-        state_id INT NOT NULL,
-        name VARCHAR(256) NOT NULL,
-        FOREIGN KEY(state_id) REFERENCES states(id)
-        );
-SELECT cities.id, cities.name
-FROM cities
-WHERE state_id = (SELECT id FROM states WHERE name = 'California')
-ORDER BY cities.id ASC;
-
+SELECT cities.id, cities.name, states.name FROM cities
+LEFT JOIN states ON states.id = cities.state_id
+ORDER BY cities.id;
