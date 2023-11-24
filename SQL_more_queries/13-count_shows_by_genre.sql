@@ -1,9 +1,6 @@
 -- 3 first students in the Batch ID=3
 -- because Batch 3 is the best!
-SELECT genre, COUNT(tv_show_id) AS number_of_shows
-FROM hbtn_0d_tvshows
-JOIN hbtn_0d_tvshows_genres ON hbtn_0d_tvshows.id = hbtn_0d_tvshows_genres.tv_show_id
-JOIN hbtn_0d_genres ON hbtn_0d_tvshows_genres.genre_id = hbtn_0d_genres.id
-GROUP BY genre
-HAVING COUNT(tv_show_id) > 0
-ORDER BY number_of_shows DESC;
+SELECT tv_genres.name AS genre, COUNT(tv_show_genres.genre_id) AS 'number_of_shows'
+FROM tv_genres RIGHT JOIN tv_show_genres
+ON tv_genres.id = tv_show_genres.genre_id
+GROUP BY genre ORDER BY number_of_shows DESC;
