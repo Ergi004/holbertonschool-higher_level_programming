@@ -9,7 +9,7 @@ import sys
 
 
 if __name__ == "__main__":
-    db = MySQL.connect(
+    db = MySQLdb.connect(
             host="localhost",
             user=sys.argv[1],
             passwd=sys.argv[2],
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
     rows = cur.fetchall()
-    for rows in rows:
+    for row in rows:
         print(row)
     cur.close()
     db.close()
